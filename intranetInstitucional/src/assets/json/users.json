@@ -1,0 +1,14 @@
+[
+    {
+
+    "id" : 1,
+    "email" : "email@yo.cl",
+    "password" : "panconqeso",
+    "name " : "sebi",
+    "address" : "uruguay 1111",
+    "isAdmin" : "true",
+    "rut" : "19914277-1",
+    "phone" : "97736893",
+    "image" : "https://media.gq.com.mx/photos/624f1761a16e9ddaa899cd19/16:9/w_2560%2Cc_limit/GettyImages-1325105287.jpg"
+}
+]

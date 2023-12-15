@@ -1,6 +1,8 @@
 <script setup>
 import Navbar from "../components/Navbar.vue";
 import NewsCard from "../components/NewsCard.vue";
+import {news} from '../assets/json/news.js'   
+
 
 /*const handleDeleteNews = async () => {
 
@@ -30,14 +32,18 @@ import NewsCard from "../components/NewsCard.vue";
       
     </div>
     <div class="NewsListContainer">
-        <button type="button" class="btn btn-success CreateButton">Create News</button>
+        <RouterLink to="/createNewsPage">
+            <button type="button" class="btn btn-success CreateButton">Create News</button>
+        </RouterLink>
+        
       <div class="NewsCardContainer">
         <NewsCard
+         v-for="noticia in news" :key="noticia.id" :noticia="noticia"
           class="NewsCard"
-          :NewsDate="'12/12/2012'"
-          :NewsDescription="'soy una descripcion'"
-          :NewsTitle="'Soy Un Titulo'"
-          :NewsImage="'https://s1.eestatic.com/2021/03/13/actualidad/565703484_175278407_1280x1706.jpg'"
+          :date="noticia.date"
+          :body="noticia.body"
+          :title="noticia.title"
+          :imageUrl="noticia.imageUrl"
         />
         <button type="button" class="btn btn-danger DeleteButton" @click="handleDeleteNews" >Delete News</button>
         <button type="button" class="btn btn-warning EditButton">Edit News</button>
@@ -50,7 +56,7 @@ import NewsCard from "../components/NewsCard.vue";
 <style>
 .CreateButton{
     position: relative;
-    left: 30%
+    left:400%
 }
 .DeleteButton{
 
